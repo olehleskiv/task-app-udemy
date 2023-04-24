@@ -25,7 +25,7 @@
 
 const nodemailer = require('nodemailer');
 
-const sendWelcomeEmail = (email, name) => {
+const sendWelcomeEmail = async (email, name) => {
   let transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
@@ -52,7 +52,7 @@ const sendWelcomeEmail = (email, name) => {
   });
 }
 
-const sendCancelationEmail = (email, name) => {
+const sendCancelationEmail = async (email, name) => {
   let transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,

@@ -1,15 +1,22 @@
-const express = require('express');
-require('./db/mongoose');
-
-const userRouter = require('./routers/user');
-const taskRouter = require('./routers/task');
-
-const app = express();
+const app = require('./app');
 const PORT = process.env.PORT;
 
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
+app.listen(PORT, () => {
+  console.log('Server is up on port ', PORT);
+});
+
+// const express = require('express');
+// require('./db/mongoose');
+
+// const userRouter = require('./routers/user');
+// const taskRouter = require('./routers/task');
+
+// const app = express();
+
+
+// app.use(express.json());
+// app.use(userRouter);
+// app.use(taskRouter);
 
 // app.post('/users', (req, res) => {
 //   const user = new User(req.body);
@@ -68,8 +75,3 @@ app.use(taskRouter);
 //       res.status(500).send();
 //     });
 // });
-
-
-app.listen(PORT, () => {
-  console.log('Server is up on port ', PORT);
-});
